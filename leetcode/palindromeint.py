@@ -3,10 +3,7 @@ class Solution:
         min_o = -2**31
         max_o = 2**31 - 1
         
-        if x not in range(min_o, max_o):
-            return False
-        
-        if x < 0:
+        if x not in range(min_o, max_o) or x < 0:
             return False
         
         result = int(str(x)[::-1])

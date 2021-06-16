@@ -1,3 +1,5 @@
+# runtime: O(n)
+# space: O(n)
 class Solution:
     def twoSum(self, nums: List[int], target: int) -> List[int]:
         val_map = dict()
@@ -7,5 +9,6 @@ class Solution:
                 val_map[val] = i
             else:
                 return [val_map.get(diff), i]
-            
+        
+        return []
         
