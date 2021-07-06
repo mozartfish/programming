@@ -2,14 +2,21 @@
 # space complexity: O(n) - dictionary used for storing values
 class Solution:
     def twoSum(self, nums: List[int], target: int) -> List[int]:
-        # dictionary to store values in the list 
-        num_map = dict()
-        for i, value in enumerate(nums):
-            # get the difference
+        '''
+        1. calculate the difference between the target value and each value in the list
+        2. check if difference is in the list
+        3. return the indexes of the two values whose sum equals the target value 
+        '''
+        
+        # data structure for storing difference and index
+        num_dict = {}
+        
+        for index, value in enumerate(nums):
             diff = target - value
-            
-            # check if the value is in the map 
-            if diff in num_map:
-                return [num_map.get(diff), i]
+            if diff not in num_dict:
+                num_dict[value] = index
             else:
-                num_map[value] = i
+                return [num_dict.get(diff), index]
+  
+                
+            
