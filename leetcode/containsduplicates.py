@@ -2,14 +2,14 @@
 # spacetime complexity: O(n) for the set because we add n elements to the set in the worst case
 class Solution:
     def containsDuplicate(self, nums: List[int]) -> bool:
-        result = False
-        num_set = set()
+        '''
+        1. keep track of frequency - dictionary
+        '''
         
-        for i, value in enumerate(nums):
-            if nums[i] not in num_set:
-                num_set.add(nums[i])
-            else:
-                result = True
+        fre = Counter(nums)
         
-        return result
+        for key in fre:
+            if fre[key] >= 2:
+                return True
         
+        return False
