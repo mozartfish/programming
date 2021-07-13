@@ -8,13 +8,13 @@
 #         self.next = next
 class Solution:
     def reverseList(self, head: ListNode) -> ListNode:      
-        prev_node = None
-        curr_node = head
+        prev_node = None # represent the end
+        curr_node = head # current node in list
         while curr_node:
-            next_node = curr_node.next
-            curr_node.next = prev_node
-            prev_node = curr_node
-            curr_node = next_node
+            next_node = curr_node.next # temp node for the rest of the list
+            curr_node.next = prev_node # update current next to the end
+            prev_node = curr_node # update previous node
+            curr_node = next_node # update current node
         head = prev_node
         return head
         
